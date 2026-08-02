@@ -2,3 +2,6 @@
 .swiftpm/
 *.air
 .DS_Store
+
+# Your own post draft + strategy notes — keep local, not public
+INDIE_HACKERS_POST.md
