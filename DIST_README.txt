@@ -10,9 +10,9 @@ CAVOK is a Mac study app that runs a language model entirely on your own
 machine -- no account, no API key, nothing sent to a server. It reads your
 textbooks and answers questions from them.
 
-It currently requires macOS 26. I want to lower that to macOS 14 so it runs
-on every Apple Silicon Mac ever made. Everything says it should work, but I
-own one Mac and it's on macOS 26, so I can't actually verify it.
+It currently requires macOS 26. I want to lower that to macOS 15, so people
+who simply haven't updated aren't locked out. Everything says it should
+work, but I own one Mac and it's on macOS 26, so I can't actually verify it.
 
 This app checks whether the part I can't test -- the GPU maths -- runs on
 your Mac.
@@ -64,7 +64,11 @@ If that works on your Mac, the app will work on your Mac.
 
 MOST USEFUL RIGHT NOW
 
-macOS 14 (Sonoma) or macOS 15 (Sequoia), on Apple Silicon (M1-M4).
+macOS 15 (Sequoia) on Apple Silicon (M1-M4). That's the version I'm
+planning to support, and the one I most need confirmed.
+
+macOS 14 (Sonoma) is still worth running -- it tells me whether going even
+further back would be worth the work.
 
 Intel Macs will correctly report that they can't run it -- I already know
 that, so no need to check unless you're curious.

@@ -79,12 +79,18 @@ enum SystemProbe {
     static func run() -> [ProbeResult] {
         var out: [ProbeResult] = []
 
+        // The floor is 15.0, not 14.0: the Textual markdown renderer that draws
+        // every answer declares .macOS(.v15), and ALL eight of its released
+        // versions do — there is no older tag to fall back to. Reaching 14 would
+        // mean replacing the renderer, which changes how every answer looks.
         let v = ProcessInfo.processInfo.operatingSystemVersion
         out.append(ProbeResult(
             name: "macOS version",
-            status: v.majorVersion >= 14 ? .pass : .fail,
+            status: v.majorVersion >= 15 ? .pass : .warn,
             detail: "\(osVersion) (build \(osBuild))"
-                + (v.majorVersion < 14 ? " — below CAVOK's dependency floor of 14.0" : "")
+                + (v.majorVersion < 15
+                   ? " — below the 15.0 floor, but the GPU results below are still useful"
+                   : "")
         ))
 
         out.append(ProbeResult(

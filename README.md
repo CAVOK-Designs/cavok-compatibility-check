@@ -3,7 +3,7 @@
 **A ten-second check that tells you whether CAVOK's on-device study engine can
 run on your Mac.**
 
-[**⬇ Download the latest release**](../../releases/latest) · 5 MB · macOS 14+ ·
+[**⬇ Download the latest release**](../../releases/latest) · 5 MB · macOS 14+ (runs to report) ·
 Apple Silicon · signed and notarized by Apple
 
 ---
@@ -14,9 +14,11 @@ Apple Silicon · signed and notarized by Apple
 entirely on your own machine — no account, no API key, nothing sent to a server.
 It reads your textbooks and answers questions from them.
 
-It currently requires macOS 26. I want to lower that to **macOS 14**, which would
-cover every Apple Silicon Mac ever made. Everything says it should work — every
-dependency declares macOS 14 or lower, and it compiles cleanly at that target.
+It currently requires macOS 26. I want to lower that to **macOS 15**, so people
+who simply haven't updated aren't locked out. (macOS 14 was the original target,
+but the Textual markdown renderer that draws every answer declares `.macOS(.v15)`
+— and so do all eight of its released versions, so 15 is the real floor without
+replacing it.)
 
 But I own one Mac and it runs macOS 26, so I cannot verify the part that actually
 matters: whether the GPU maths runs on older systems. That's what this app checks,
@@ -37,9 +39,10 @@ Prefer the terminal? Same report, no GUI:
 "CAVOK Compatibility Check.app/Contents/MacOS/CavokCompat" --headless
 ```
 
-**Most useful right now:** macOS 14 (Sonoma) or 15 (Sequoia) on Apple Silicon
-(M1–M4). Intel Macs will correctly report that they can't run it — I already know
-that.
+**Most useful right now:** **macOS 15 (Sequoia)** on Apple Silicon (M1–M4) —
+that's the version I plan to support. macOS 14 (Sonoma) reports are still welcome;
+they tell me whether going further back would be worth the work. Intel Macs will
+correctly report that they can't run it — I already know that.
 
 If the app *quits* partway through, that's a useful result too. Please tell me
 which step it reached — system details are deliberately shown before the GPU work
