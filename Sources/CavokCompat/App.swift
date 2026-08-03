@@ -200,7 +200,7 @@ struct ContentView: View {
             .foregroundStyle(.secondary)
 
             Label {
-                Text("No model is downloaded. This app is about 40 MB and does "
+                Text("No model is downloaded. This app is about 28 MB and does "
                      + "not fetch anything.")
                     .font(.system(size: 12))
                     .fixedSize(horizontal: false, vertical: true)
